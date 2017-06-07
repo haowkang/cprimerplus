@@ -1,0 +1,41 @@
+    Welcome! In this capter, we begin by presenting a simple sample program and explain what it dose. At the same time, we highlight some of C's basic features.
+    
+    A Simple Example of C
+    Let's take a look at a simple C program. This program, shown in Listing 2.1, serves to point out some of the basic features of programing in C. Before you read the upcoming line-by-line explanation of the program, read through Listing 2.1 to see whether you can figure out for yourself what it will do.
+    
+    Listing 2.1.  The first.c Program
+    #include <stdio.h>
+int main(void)
+{
+int num;
+num = 1;    /* a simple program*/
+            /* define a variable called num */
+            /* assign a value to num*/
+printf("I am a simple "); /* use the printf() function*/
+printf("computer.\n");
+printf("My favorite number is %d because it is first.\n",num);
+return 0;
+}
+
+    If you think this program will print something on your screen, you are right! Exactly what will be printed might not be apparent, so run the program and see the results. First, use your favorite editor(or your complier's favorate editor) to create a file containing the text from Listing 2.1. Give the file a name that ends in .C and that satisfies your local system's name requirements. You can use first.c, for example. Now complie and rum the program. If all went well, the output should look like the following:
+    I am a simple computer.
+    My favorite number is 1 because it is first.
+    All in all, this result is not too surprising, but what happened to the \ns and the %d in the program? And some of the lines in the program do look strange. It is time for an explanation.
+    
+    The Example Explained
+    We'll take two passes through the program's source code. The fist pass ("Pass 1: Quick Synopsis") highlights the meaning of each line to help you get a general feel for what is going on. The second pass ("Pass 2: Program Details") explores specific implications and details to help you gain a deeper understanding.
+    Figure 2.1 summarizes the parts of a C program; it includes more elements than our first example uses.
+    Pass 1: Quick Synopsis
+    This section presents each line from the program followed by a short description; the next section(Pass 2) explores the topics raised here more fully.
+    #include <stdio.h>          <<<<<      include another file
+    This line tells the compiler to include the information found in the file stdio.h, which is a standard part of all C compiler packages; this file provides support for keyboard input and for displaying output.
+    int main(void)            <<<<<      a function name
+    C programs consist of one or more function, the basic modules of a C program. This program consists of one function called main. The parentheses identify main() as a function name. The int indicates that the main() function returns an integer, and the void indicates that main() doesn't take any arguments. Theses are matters we'll go into later. Right now, just accept both int and void as part of the standard ISO/ANSI C way for defining main().
+    /* a simple program */    <<<<<    a comment
+    The symbols /* and */ enclose comments, remarks that help clarify a program. They are intended for the reader only and are ignored by ht compiler.
+    {       <<<<<  beginning of the body of the function
+    This opening brace marks the start of the statements that make up the function. The function definition is ended with a closeing brase (}).
+    int num;       <<<<<     a declaration statement
+    This statement announces that you are using a variable called num and that num will be an int(integer) type.
+    num = 1;       <<<<<     an assignment statement
+    The statement num = 1; assigns the value 1 to the variable called num.
