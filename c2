@@ -39,3 +39,13 @@ return 0;
     This statement announces that you are using a variable called num and that num will be an int(integer) type.
     num = 1;       <<<<<     an assignment statement
     The statement num = 1; assigns the value 1 to the variable called num.
+    printf("I am a simple");     <<<<<     a function call statement
+    Here printf() is art of the standard C library. It's termed a function, and using a function in the program is termed calling a function.
+    printf("computer.\n");       <<<<<     another function call statement
+    The next call to the printf() function tacks on computer to the end of the last phrase printed. The \n is code telling the computer to start a new line-that is, to move the cursor to the beginning of the next line.
+    printf("My favorite number is %d because it is first.\n", num);
+    The last use of printf() prints the value of num(which is 1) embedded in the phrase in quotes. The %d instructs the computer where and in what form to print the value of num.
+    return 0;                     <<<<<     a return statement
+    A C function can furnish or return, a number to the agency that used it. For the present, just regard this line as part of the ISO/ANSI C requirement for a properly written main() function.
+    }           <<<<<     the end
+    As promised, the program ends with a closing brace.
