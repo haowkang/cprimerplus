@@ -1,0 +1,33 @@
+    Powerfull, intelligent, versatile, and useful: Most of us wouldn't mind being described that way. With C, there's at least the chance of having our programs described that way. The trick is controlling the flow of a program. According to computer science (which is the science of computers and not science by computers...yet), a good language should provide these three forms of program flow:
+    . Executing a sequence of statemenst
+    . Repeating a sequence of statements until some condition is met (looping)
+    . Using a test to decide between alternative sequences (branching)
+    The first form you know well; all the previous programs have consisted of a sequence of statements. The while loop is one example of second form. This Chapter takes a closer look at the while loop along with two other loop structures- for and do while. The final form, choosing between different possible cources of action,k makes a program much more "intelligent" and increase the usefullness of a computer enormously. Sadly, you'll have to wait a chapter before being entrusted with such power. The chapter also introduces arrays because they give you something to do with your new knowledge of loops. In addition, the chapter continues your education about functions. Let's begin by reviewing the while loop.
+    Revisiting the while loop
+    You are already somewhat familiar with the while loop, but let's review it with a program that sums integers entered from the keyboard (see Listing 6.1). This example makes use of the return value of scanf() to terminate input.
+    Listing 6.1. The summing.c Program
+    /* summing.c -- sums integers entered interactively */
+    #include <stdio.h>
+    int main(void)
+    {
+    long num;
+    long sum = 0L;
+    /* initialize sum to zero */
+    int status;
+    printf("please enter an integer to be summed ");
+    printf("(q to quit): ");
+    status = scanf("%ld",&num);
+    while (status ==1) /* == means "is equal to" */
+    {
+    sum = sum +num;
+    printf("Please enter next integer (q to quit): ");
+    statrs = scanf("%ld", &num);
+    }
+    printf("those interger sum to %ld.\n", sum);
+    return 0;
+    }
+    Listing 6.1 uses type long to allow for larger numbers. For consistency, the program initializes sum to 0L (type long zero) rather than to 0 (type int zero), even though C's conversions enable you to use a plain 0.
+    Program Comments
+    Let's look at the while loop first. The test condition for this loop is the following expression:
+    status == 1;
+    The == operater is C's equality operator; that is ,this expression tests whether status is equal to 1. Don't confuse it with status =1, which assigns 1 to status. With the status == 1 test condition, the loop repeats as long as status ==1. For each cycle, the loop adds the current value of num to sum, so that sum maintains a running total. When status gets a value other than 1, the loop terminates, and the program reports the final value of sum.
