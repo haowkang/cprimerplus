@@ -61,3 +61,24 @@ return 0;
     ISO/ANSI C has standardized which header files must be supplied. Some programs need to include stdio.h, and some don't. The documentation for a particular C implementation should include a description of the function in the C library. These function descriptions indentify which header files are needed. For example, the description for printf() says to use stdio.h. Omittiong the proper header file might not affect a particular program, but it is best not to rely on that. Each time this book uses library functions, it will use the include files specified by the ISO/ANSI standard for those functions.
     Why Input and Output Are Not Built In
     Pherhaps you are wondering why something as basic as input and output information isn't included automatically. One answer is that not all programs use this I/O pachage, and part of the C philosophy is to avoid carrying unnecessary weight. This principle of economic use of resources makes C popular for embedded programming- for example, writting code for a chip that controls an automotive fuel system. Incidentally the #include line is not even a C language statement! The # symbol in column 1 identifies the line as one to be handled by the c preprocessor before the compiler takes over. You will encounter more examples of preprocessor instructions later, and Chapter 16, "The C Preprocessor and the C Library," discusses this topic more fully.
+    Introducing Debugging
+    Now that you can write a simple C program, you are in a position to make simple error. Program errors often are called bugs, and finding and fixing the errors is called debugging.
+    Listing 2.4 presents a program with some bugs. See how many you can spot.
+    Listing 2.4. The nogood.c Program
+    /* nogood.c  --  a program with errors  */
+    #include <stdio.h>
+    {
+    int main(void)
+    int n, int n2, int n3;
+    /* this program has serval errors
+    n =5;
+    n2 = n*n;
+    n3 = n2*n2;
+    printf("n = %d, n squared = %d, n cubed =%d\n",n,n2,n3);
+    return 0;
+    }
+    Syntax Error
+    It's analogous to a grammatical error in English
+    
+    Semantic Errors
+    Semantic errors are errors in meaning. For example, consider the following sentence: Furry inflation thinks greenly. The syntax is fine because adjectives, nouns, verbs, and adverbs are in right places, but the sentence doesn't mean anything.
